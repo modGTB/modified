@@ -4,9 +4,11 @@
 ======================
 Installationsanleitung:
 
-1. Dateien in das `shoproot` Kopieren
+1. [Modul hier downloaden.](https://github.com/EASYMARKETING/modified/archive/master.zip)
 
-2. /admin/includes/filenames.php (Bei Shopversionen vor 1.06 in /admin/includes/application_top.php)
+2. Dateien aus dem ordner `shoproot` in Ihr Shop Hauptverzeichnis `shoproot`.
+
+3. /admin/includes/filenames.php (Bei Shopversionen vor 1.06 in /admin/includes/application_top.php)
 
 		suche das hier:
 		define('FILENAME_XSELL_GROUPS','cross_sell_groups.php');
@@ -14,7 +16,7 @@ Installationsanleitung:
 		füge danach ein:
 		define('FILENAME_EASYMARKETING','easymarketing.php');
 
-3. /includes/application_bottom.php
+4. /includes/application_bottom.php
 
 		suche das hier:
 		// end of page
@@ -29,7 +31,7 @@ Installationsanleitung:
 		}
 		## easymarketing - conversion tracking
 
-4. /admin/includes/column_left.php
+5. /admin/includes/column_left.php
 
 		suche das hier:
 		if (($_SESSION['customers_status']['customers_status_id'] == '0') && ($admin_access['module_export'] == '1')) echo '<li><a href="' . xtc_href_link(FILENAME_MODULE_EXPORT) . '" class="menuBoxContentLink"> -' . BOX_MODULE_EXPORT . '</a></li>';
@@ -39,7 +41,7 @@ Installationsanleitung:
 		if (($_SESSION['customers_status']['customers_status_id'] == '0') && ($admin_access['easymarketing'] == '1')) echo '<li><a href="' . xtc_href_link(FILENAME_EASYMARKETING, '') . '" class="menuBoxContentLink"> -' . BOX_EASYMARKETING . '</a></li>';
 
 
-5. /lang/german/admin/german.php
+6. /lang/german/admin/german.php
 
 		suche das hier:
 		define('BOX_ORDERS_XSELL_GROUP','Cross-Marketing Gruppen');
@@ -48,7 +50,7 @@ Installationsanleitung:
 		define('BOX_EASYMARKETING','EASYMARKETING AG');
 
 
-6. /lang/english/admin/english.php
+7. /lang/english/admin/english.php
 
 		suche das hier:
 		define('BOX_ORDERS_XSELL_GROUP','Cross-sell groups');
@@ -57,7 +59,7 @@ Installationsanleitung:
 		define('BOX_EASYMARKETING','EASYMARKETING AG');
 
 
-7. SQL ausführen
+8. SQL ausführen
 
 		ALTER TABLE `admin_access` ADD `easymarketing` INT( 1 ) DEFAULT '0' NOT NULL;
 		UPDATE `admin_access` SET `easymarketing` = '1' WHERE `customers_id` = '1' LIMIT 1;
