@@ -1,4 +1,4 @@
-# EASYMARKETING Gambio Module
+# EASYMARKETING Modified Module
 
 ## Installation des Moduls
 ======================
